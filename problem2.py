@@ -59,7 +59,13 @@ def main():
     # write lines to output file
     Reporter.write_output(
       file_name = output_csv_file_name,
-      content = ','.join(map(str, [learning_rate, iterations, betas[0], betas[1], betas[2]])) + "\n",
+      content = ",".join(map(str, [learning_rate, iterations, betas[0], betas[1], betas[2]])) + "\n",
+    )
+
+    Visualizer.draw_chart(
+      input_values = training_inputs,
+      weights = betas,
+      file_name = "figures/figure_" + "_".join(map(str, [learning_rate, iterations]))
     )
 
 if __name__ == '__main__':
