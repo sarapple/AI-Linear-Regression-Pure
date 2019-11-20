@@ -11,7 +11,7 @@ class GradientDescent:
     X_y_dot_product = X.dot(y)
 
     # gives a vector of betas solved via b=((X'X)^-1)*X'y
-    return X_y_dot_product
+    return X_dot_product_to_minus_one * X_y_dot_product
 
   @staticmethod
   def run(training_inputs, expected_classifiers, betas = None, learning_rate = 0.01, iterations = 1):
